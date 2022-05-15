@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Curriculum vitae</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      font-size: 16px;
+      font-family: sans-serif;
+      color: rgba(0, 0, 0, 0.86);
+      overflow-x: hidden;
+    }
+
+    body {
+      width: 100%;
+      height: auto;
+      padding: 5vh 5vw;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .avatar {
+      object-fit: cover;
+      object-position: 50% 20%;
+      border: 6px double rgba(0, 0, 0, 0.86);
+      border-radius: 50%;
+      margin: 0;
+    }
+
+    .titles {
+      margin-left: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 1rem;
+      height: 100%;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .titles {
+        align-items: center;
+        margin: 0;
+      }
+    }
+
+    .titles h1 {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .titles h2 {
+      font-size: 1.2rem;
+      font-family: monospace;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    .parent {
+      display: grid;
+      grid-template-columns: 220px repeat(2, 1fr);
+      grid-template-rows: 220px repeat(3, 1fr);
+      grid-column-gap: 0px;
+      grid-row-gap: 0px;
+      height: 100%;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .parent {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .div1 {
+      grid-area: 1 / 1 / 2 / 2;
+      text-align: center;
+    }
+
+    .div2 {
+      grid-area: 1 / 2 / 2 / 4;
+      position: relative;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .div2 {
+        margin-top: 1rem;
+      }
+    }
+
+    .div2::before {
+      content: "";
+      position: absolute;
+      border-top: 2px solid white;
+      height: 0;
+      width: 100%;
+      top: calc(50% + 2px);
+      left: -2px;
+    }
+
+    .div2::after {
+      content: "";
+      position: absolute;
+      border-top: 6px double rgba(0, 0, 0, 0.86);
+      height: 0;
+      width: 100%;
+      top: 50%;
+    }
+
+    .div3 {
+      grid-area: 2 / 1 / 5 / 2;
+    }
+
+    .div4 {
+      grid-area: 2 / 2 / 5 / 4;
+      padding-left: 2rem;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .div4 {
+        margin-top: 4rem;
+        padding-left: 0;
+      }
+
+      .div4::before {
+        content: "Work experience";
+        display: block;
+        font-size: 1rem;
+        font-weight: bold;
+        text-align: center;
+        margin: 0.25em;
+      }
+    }
+
+    .experience,
+    .contacts,
+    .about {
+      margin: 1.5rem 0 0;
+    }
+
+    .experience h3,
+    .contacts h3,
+    .about h3 {
+      font-size: 0.9rem;
+      font-weight: bold;
+      text-align: center;
+      margin: 0.25em;
+    }
+
+    .about p {
+      font-size: 0.85rem;
+      margin: 0.5em 0 0;
+    }
+
+    .list {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+      font-size: 0.8em;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .job {
+      margin-bottom: 1.5rem;
+      position: relative;
+    }
+
+    .job-position {
+      margin: 0;
+    }
+
+    .job-period {
+      position: absolute;
+      top: 0;
+      right: 0;
+      color: rgba(0, 0, 0, 0.56);
+      font-size: 0.8rem;
+      text-transform: lowercase;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .job-period {
+        top: 1.2rem;
+      }
+    }
+
+    .job-title {
+      display: inline-block;
+      font-style: italic;
+    }
+
+    @media print {
+      .job-title::after {
+        content: attr(href);
+        margin-left: 0.5em;
+        color: rgba(0, 0, 0, 0.56);
+      }
+    }
+
+    .job-description {
+      margin: 0;
+      margin-top: 0.5em;
+      font-size: 0.9rem;
+    }
+
+    .job-description p {
+      margin: 0;
+      margin-top: 0.5em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="parent">
+    <div class="div1">
+      <img class="avatar" alt="Evgeniy Podivilov" src="./assets/avatar.jpeg" width="220px" height="220px" />
+    </div>
+    <div class="div2">
+      <div class="titles">
+        <h1>Evgeniy Podivilov</h1>
+        <h2>frontend developer</h2>
+        <!-- <h2>software engineer</h2> -->
+      </div>
+    </div>
+    <div class="div3">
+      <div class="contacts">
+        <h3>Location</h3>
+        <p class="item">
+          <img src="./assets/location.svg" alt="phone icon" width="16px" height="16px">
+          <span>Санкт-Петербург, РФ</span>
+        </p>
+      </div>
+      <div class="contacts">
+        <h3>Contacts</h3>
+        <ul class="list">
+          <li class="item">
+            <img src="./assets/phone.svg" alt="phone icon" width="16px" height="16px">
+            <a href="tel:+79085733539">+7 (908) 573-35-39</a>
+          </li>
+          <li class="item">
+            <img src="./assets/email.svg" alt="phone icon" width="16px" height="16px">
+            <a href="mailto:evgeniy.podivilov@gmail.com">evgeniy.podivilov@gmail.com</a>
+          </li>
+          <li class="item">
+            <img src="./assets/github.svg" alt="phone icon" width="16px" height="16px">
+            <a href="https://github.com/epodivilov" target="_blank">epodivilov</a>
+          </li>
+          <li class="item">
+            <img src="./assets/twitter.svg" alt="phone icon" width="16px" height="16px">
+            <a href="https://twitter.com/senior_idealist" target="_blank">senior_idealist</a>
+          </li>
+          <li class="item">
+            <img src="./assets/linkedin.svg" alt="phone icon" width="16px" height="16px">
+            <a href="www.linkedin.com/in/evgeniy-podivilov" target="_blank">evgeniy-podivilov</a>
+          </li>
+        </ul>
+      </div>
+      <div class="about">
+        <h3>About</h3>
+        <p>Фронтенд-разработчик с&nbsp;опытом работы больше 6&nbsp;лет. В&nbsp;основном работаю с&nbsp;React стеком,
+          но&nbsp;так же интересуюсь другими направлениями, в&nbsp;частности WebGL и&nbsp;PWA.</p>
+        <p>Имею опыт разработки сложных интерфейсов с&nbsp;большим количеством графиков. Кроме того есть опыт работы
+          с&nbsp;legacy-проектами и&nbsp;перевода их&nbsp;на&nbsp;современный стек.</p>
+        <p>Обожаю работать над сложными задачами, экспериментировать с&nbsp;новыми технологиями и подходами,
+          а&nbsp;так&nbsp;же оптимизировать производительность приложений.</p>
+      </div>
+      <div class="about">
+        <h3>Skills</h3>
+        <p>HTML, CSS, JS, TS, React, Redux, NextJS, SVG, Canvas, Git</p>
+      </div>
+    </div>
+    <div class="div4">
+      <!--  -->
+      <div class="job">
+        <h4 class="job-position">Старший инженер-программист</h4>
+        <span class="job-period">Март 2022 - По настоящее время</span>
+        <a class="job-title" href="https://www.reltio.com">Reltio</a>
+        <div class="job-description">
+          <!-- <p>Reltio - это компания, которая предоставляет облачную многопользовательскую, многодоменную платформу
+            управления данными, которая предоставляет данные в реальном времени в любом масштабе.</p> -->
+          <p>Участвую в разработке набора инструментов управления пользовательскими данными на React. Разрабатываю
+            библиотеку
+            компонентов для отображения различных графиков. Внедряю best practice и инструменты анализа качества кода.
+          </p>
+        </div>
+      </div>
+      <!--  -->
+      <div class="job">
+        <h4 class="job-position">Старший разработчик</h4>
+        <span class="job-period">Сентябрь 2020 - Март 2022</span>
+        <a class="job-title" href="https://www.tinkoff.ru/">Тинькофф</a>
+        <div class="job-description">
+          <!-- <p>Тинькофф - это крупнейший частный банк в России, полностью сфокусированный на удаленном обслуживании
+            клиентов.
+          </p> -->
+          <p>В мои обязанности входила поддержка и развитие раздела <a
+              href="https://www.tinkoff.ru/entertainment">"Развлечения"</a>, состоящего из нескольких SPA-приложений на
+            React. Кроме того, я разрабатывал
+            архитектуру приложений, планировал задачи на рефакторинг, внедрял инструменты повышения качества кода.
+            Участвовал в развитии внутреннего SSR-фреймворка tramvai.
+          </p>
+          <p>Принимал ведущее участие в проекте отображения схем концертных залов. Разработал единый формат данных для
+            Android, iOS и Web. Создал инструмент трансформации SVG-схем в новый формат данных.</p>
+          <p>Помимо рабочих задач так же участвовал в программе обучения web-разработчиков в Тинькофф школе и принимал
+            участие в найме новых сотрудников и менторинге младших коллег.</p>
+        </div>
+      </div>
+
+      <!--  -->
+      <div class="job">
+        <h4 class="job-position">Инженер-программист</h4>
+        <span class="job-period">Май 2017 - Февраль 2020</span>
+        <a class="job-title" href="https://www.reltio.com">Reltio</a>
+        <div class="job-description">
+          <p>Разрабатывал инструменты конфигурирования и управления пользовательскими данными на React. Участвовал в
+            разработке
+            внутренней библиотеки компонентов. Внедрял инструменты улучшения качества кода. Ускорил процесс сборки
+            приложений. Оптимизировал ресурсы и порядок их загрузки улучшив показатели web vitals.</p>
+        </div>
+      </div>
+
+      <!--  -->
+      <div class="job">
+        <h4 class="job-position">Разработчик игр</h4>
+        <span class="job-period">Август 2016 - Март 2017</span>
+        <a class="job-title" href="https://hgstudio.ru/">Happy Games Studio</a>
+        <div class="job-description">
+          <!-- <p>Happy Games Studio - это небольшая гейм-студия по разработке веб и мобильных игр в жанре 3-в-ряд.</p> -->
+          <p>Принимал участие в разработки игры <a href="https://www.youtube.com/watch?v=ERv9ne35sNA">"Любимая дача"</a>
+            на PixiJS. Анимировал различные элементы интерфейса.
+            Разработал систему работы с модальными окнами в игре. Спроектировал и развивал систему расстановки декораций
+            на даче.</p>
+          <p>Помимо игры создал и развивал инструмент отображения игровой аналитики, а так же администрирования игровых
+            уровней, пользователей и групп.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
