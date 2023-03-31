@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evgeniy Podivilov</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            width: 100vw;
+            height: 100vh;
+            margin: 0;
+            font-size: 16px;
+            font-family: sans-serif;
+            color: rgba(0, 0, 0, 0.86);
+            overflow-x: hidden;
+        }
+
+        body {
+            width: 100%;
+            height: auto;
+            padding: 5vh 5vw;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .avatar {
+            object-fit: cover;
+            object-position: 50% 15%;
+            border: 6px double rgba(0, 0, 0, 0.86);
+            border-radius: 50%;
+            margin: 0;
+        }
+
+        .titles {
+            margin-left: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+            height: 100%;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .titles {
+                align-items: center;
+                margin: 0;
+            }
+        }
+
+        .titles h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .titles h2 {
+            font-size: 1.2rem;
+            font-family: monospace;
+            font-weight: normal;
+            margin: 0;
+        }
+
+        .parent {
+            display: grid;
+            grid-template-columns: 220px repeat(2, 1fr);
+            grid-template-rows: 220px repeat(3, 1fr);
+            grid-column-gap: 0px;
+            grid-row-gap: 0px;
+            height: 100%;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .parent {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+
+        .div1 {
+            grid-area: 1 / 1 / 2 / 2;
+            text-align: center;
+        }
+
+        .div2 {
+            grid-area: 1 / 2 / 2 / 4;
+            position: relative;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .div2 {
+                margin-top: 1rem;
+            }
+        }
+
+        .div2::before {
+            content: "";
+            position: absolute;
+            border-top: 2px solid white;
+            height: 0;
+            width: 100%;
+            top: calc(50% + 2px);
+            left: -2px;
+        }
+
+        .div2::after {
+            content: "";
+            position: absolute;
+            border-top: 6px double rgba(0, 0, 0, 0.86);
+            height: 0;
+            width: 100%;
+            top: 50%;
+        }
+
+        .div3 {
+            grid-area: 2 / 1 / 5 / 2;
+        }
+
+        .div4 {
+            grid-area: 2 / 2 / 5 / 4;
+            padding-left: 2rem;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .div4 {
+                margin-top: 4rem;
+                padding-left: 0;
+            }
+
+            .div4::before {
+                content: "Experience";
+                display: block;
+                font-size: 1rem;
+                font-weight: bold;
+                text-align: center;
+                margin: 0.25em;
+            }
+        }
+
+        .experience,
+        .contacts,
+        .about {
+            margin: 1.5rem 0 0;
+        }
+
+        .experience h3,
+        .contacts h3,
+        .about h3 {
+            font-size: 0.9rem;
+            font-weight: bold;
+            text-align: center;
+            margin: 0.25em;
+        }
+
+        .about p {
+            font-size: 0.85rem;
+            margin: 0.5em 0 0;
+        }
+
+        .list {
+            margin: 0;
+            padding: 0;
+            list-style-type: none;
+        }
+
+        .item {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            font-size: 0.8em;
+            line-height: 1.8;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .job {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .job-position {
+            margin: 0;
+        }
+
+        .job-period {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: rgba(0, 0, 0, 0.56);
+            font-size: 0.8rem;
+            text-transform: lowercase;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .job-period {
+                top: 1.2rem;
+            }
+        }
+
+        .job-title {
+            display: inline-block;
+            font-style: italic;
+        }
+
+        @media print {
+            .job-title::after {
+                content: attr(href);
+                margin-left: 0.5em;
+                color: rgba(0, 0, 0, 0.56);
+            }
+        }
+
+        .job-description {
+            margin: 0;
+            margin-top: 0.5em;
+            font-size: 0.9rem;
+        }
+
+        .job-description p {
+            margin: 0;
+            margin-top: 0.5em;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="div1">
+            <img class="avatar" alt="Evgeniy Podivilov" src="./assets/avatar.jpg" width="220px" height="220px" />
+        </div>
+        <div class="div2">
+            <div class="titles">
+                <h1>Evgeniy Podivilov</h1>
+                <h2>frontend developer</h2>
+            </div>
+        </div>
+        <div class="div3">
+            <div class="contacts">
+                <h3>Location</h3>
+                <p class="item">
+                    <img src="./assets/location.svg" alt="phone icon" width="16px" height="16px">
+                    <span>Lisbon, Portugal</span>
+                </p>
+            </div>
+            <div class="contacts">
+                <h3>Contacts</h3>
+                <ul class="list">
+                    <li class="item">
+                        <img src="./assets/phone.svg" alt="phone icon" width="16px" height="16px">
+                        <a href="tel:+351915644367">+351 915 644 367</a>
+                    </li>
+                    <li class="item">
+                        <img src="./assets/email.svg" alt="phone icon" width="16px" height="16px">
+                        <a href="mailto:evgeniy.podivilov@gmail.com">evgeniy.podivilov@gmail.com</a>
+                    </li>
+                    <li class="item">
+                        <img src="./assets/github.svg" alt="phone icon" width="16px" height="16px">
+                        <a href="https://github.com/epodivilov" target="_blank">epodivilov</a>
+                    </li>
+                    <li class="item">
+                        <img src="./assets/twitter.svg" alt="phone icon" width="16px" height="16px">
+                        <a href="https://twitter.com/senior_idealist" target="_blank">senior_idealist</a>
+                    </li>
+                    <li class="item">
+                        <img src="./assets/linkedin.svg" alt="phone icon" width="16px" height="16px">
+                        <a href="www.linkedin.com/in/evgeniy-podivilov" target="_blank">evgeniy-podivilov</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="about">
+                <h3>About</h3>
+                <p>Frontend developer with more than 6 years of experience. Mainly working with React stack, but also
+                    interested in other areas, in particular WebGL and PWA.</p>
+                <p>I have experience in developing complex interfaces with a lot of graphs. In addition, I have
+                    experience working with legacy projects and translating them to the modern stack.</p>
+                <p>I love working on complex tasks, experimenting with new technologies and approaches, as well as
+                    optimizing application performance.</p>
+            </div>
+            <div class="about">
+                <h3>Skills</h3>
+                <p>HTML, CSS, JS, TS, React, Redux, NextJS, SVG, Canvas, Git</p>
+            </div>
+        </div>
+        <div class="div4">
+            <!--  -->
+            <div class="job">
+                <h4 class="job-position">Senior software engineer</h4>
+                <span class="job-period">March 2022 - Present</span>
+                <a class="job-title" href="https://www.reltio.com">Reltio</a>
+                <div class="job-description">
+                    <p>I participate in the development of a set of tools for managing user data in React. Developing a
+                        library of components to display various graphs. Implementing best practices and code quality
+                        analysis tools.
+                    </p>
+                </div>
+            </div>
+            <!--  -->
+            <div class="job">
+                <h4 class="job-position">Senior Developer</h4>
+                <span class="job-period">September 2020 - March 2022</span>
+                <a class="job-title" href="https://www.tinkoff.ru/">Tinkoff</a>
+                <div class="job-description">
+                    <p>
+                        My responsibilities included support and development of the <a
+                            href="https://www.tinkoff.ru/entertainment">Entertainment section</a>, which consisted of
+                        several SPA applications on React. In addition, I developed application architecture, planned
+                        refactoring tasks, and implemented code quality improvement tools. Participated in the
+                        development of internal SSR framework tramvai.
+                    </p>
+                    <p>Took leading part in the project of mapping concert halls. Developed a unified data format for
+                        Android, iOS and the Web. Created a tool for transforming SVG diagrams into a new data format.
+                    </p>
+                    <p>In addition to my work tasks, I also participated in the web developer training program at the
+                        Tinkoff School and took part in the hiring of new employees and mentoring of junior colleagues.
+                    </p>
+                </div>
+            </div>
+
+            <!--  -->
+            <div class="job">
+                <h4 class="job-position">Software Engineer</h4>
+                <span class="job-period">May 2017 - February 2020</span>
+                <a class="job-title" href="https://www.reltio.com">Reltio</a>
+                <div class="job-description">
+                    <p>Developed configuration tools and user data management in React. Participated in the development
+                        of an internal component library. Implemented tools to improve code quality. Accelerated the
+                        process of building applications. Optimized resources and the order in which they are loaded,
+                        improving web vitals.</p>
+                </div>
+            </div>
+
+            <!--  -->
+            <div class="job">
+                <h4 class="job-position">Game Developer</h4>
+                <span class="job-period">August 2016 - March 2017</span>
+                <a class="job-title" href="https://hgstudio.ru/">Happy Games Studio</a>
+                <div class="job-description">
+                    <p>Participated in the development of the game <a
+                            href="https://www.youtube.com/watch?v=ERv9ne35sNA">"Ranch Adventures"</a> in PixiJS.
+                        Animated
+                        various elements of the interface. Developed a system of working with modal windows in the game.
+                        Designed and developed the system of arranging scenery at the ranch.</p>
+                    <p>In addition to the game created and developed a tool to display game analytics, as well as the
+                        administration of the game levels, users and groups.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
