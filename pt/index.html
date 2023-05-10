@@ -1,362 +1,137 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evgeniy Podivilov</title>
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        html,
-        body {
-            width: 100vw;
-            height: 100vh;
-            margin: 0;
-            font-size: 16px;
-            font-family: sans-serif;
-            color: rgba(0, 0, 0, 0.86);
-            overflow-x: hidden;
-        }
-
-        body {
-            width: 100%;
-            height: auto;
-            padding: 5vh 5vw;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .avatar {
-            object-fit: cover;
-            object-position: 50% 15%;
-            border: 6px double rgba(0, 0, 0, 0.86);
-            border-radius: 50%;
-            margin: 0;
-        }
-
-        .titles {
-            margin-left: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 1rem;
-            height: 100%;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .titles {
-                align-items: center;
-                margin: 0;
-            }
-        }
-
-        .titles h1 {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin: 0;
-        }
-
-        .titles h2 {
-            font-size: 1.2rem;
-            font-family: monospace;
-            font-weight: normal;
-            margin: 0;
-        }
-
-        .parent {
-            display: grid;
-            grid-template-columns: 220px repeat(2, 1fr);
-            grid-template-rows: 220px repeat(3, 1fr);
-            grid-column-gap: 0px;
-            grid-row-gap: 0px;
-            height: 100%;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .parent {
-                display: flex;
-                flex-direction: column;
-            }
-        }
-
-        .div1 {
-            grid-area: 1 / 1 / 2 / 2;
-            text-align: center;
-        }
-
-        .div2 {
-            grid-area: 1 / 2 / 2 / 4;
-            position: relative;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .div2 {
-                margin-top: 1rem;
-            }
-        }
-
-        .div2::before {
-            content: "";
-            position: absolute;
-            border-top: 2px solid white;
-            height: 0;
-            width: 100%;
-            top: calc(50% + 2px);
-            left: -2px;
-        }
-
-        .div2::after {
-            content: "";
-            position: absolute;
-            border-top: 6px double rgba(0, 0, 0, 0.86);
-            height: 0;
-            width: 100%;
-            top: 50%;
-        }
-
-        .div3 {
-            grid-area: 2 / 1 / 5 / 2;
-        }
-
-        .div4 {
-            grid-area: 2 / 2 / 5 / 4;
-            padding-left: 2rem;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .div4 {
-                margin-top: 4rem;
-                padding-left: 0;
-            }
-
-            .div4::before {
-                content: "Experience";
-                display: block;
-                font-size: 1rem;
-                font-weight: bold;
-                text-align: center;
-                margin: 0.25em;
-            }
-        }
-
-        .experience,
-        .contacts,
-        .about {
-            margin: 1.5rem 0 0;
-        }
-
-        .experience h3,
-        .contacts h3,
-        .about h3 {
-            font-size: 0.9rem;
-            font-weight: bold;
-            text-align: center;
-            margin: 0.25em;
-        }
-
-        .about p {
-            font-size: 0.85rem;
-            margin: 0.5em 0 0;
-        }
-
-        .list {
-            margin: 0;
-            padding: 0;
-            list-style-type: none;
-        }
-
-        .item {
-            display: flex;
-            align-items: center;
-            gap: 0.5em;
-            font-size: 0.8em;
-            line-height: 1.8;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        .job {
-            margin-bottom: 1.5rem;
-            position: relative;
-        }
-
-        .job-position {
-            margin: 0;
-        }
-
-        .job-period {
-            position: absolute;
-            top: 0;
-            right: 0;
-            color: rgba(0, 0, 0, 0.56);
-            font-size: 0.8rem;
-            text-transform: lowercase;
-        }
-
-        @media only screen and (max-width: 600px) {
-            .job-period {
-                top: 1.2rem;
-            }
-        }
-
-        .job-title {
-            display: inline-block;
-            font-style: italic;
-        }
-
-        @media print {
-            .job-title::after {
-                content: attr(href);
-                margin-left: 0.5em;
-                color: rgba(0, 0, 0, 0.56);
-            }
-        }
-
-        .job-description {
-            margin: 0;
-            margin-top: 0.5em;
-            font-size: 0.9rem;
-        }
-
-        .job-description p {
-            margin: 0;
-            margin-top: 0.5em;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desenvolvedor de CV Evgeny Podivilov</title>
+  <link rel="stylesheet" href="../assets/index.css">
 </head>
 
 <body>
-    <div class="parent">
-        <div class="div1">
-            <img class="avatar" alt="Evgeniy Podivilov" src="../assets/avatar.jpg" width="220px" height="220px" />
-        </div>
-        <div class="div2">
-            <div class="titles">
-                <h1>Evgeniy Podivilov</h1>
-                <h2>desenvolvedor frontend</h2>
-            </div>
-        </div>
-        <div class="div3">
-            <div class="contacts">
-                <h3>Location</h3>
-                <p class="item">
-                    <img src="../assets/location.svg" alt="location icon" width="16px" height="16px">
-                    <span>Lisboa, Portugal</span>
-                </p>
-            </div>
-            <div class="contacts">
-                <h3>Contacts</h3>
-                <ul class="list">
-                    <li class="item">
-                        <img src="../assets/phone.svg" alt="phone icon" width="16px" height="16px">
-                        <a href="tel:+351915644367">+351 915 644 367</a>
-                    </li>
-                    <li class="item">
-                        <img src="../assets/email.svg" alt="email icon" width="16px" height="16px">
-                        <a href="mailto:evgeniy.podivilov@gmail.com">evgeniy.podivilov@gmail.com</a>
-                    </li>
-                    <li class="item">
-                        <img src="../assets/github.svg" alt="github icon" width="16px" height="16px">
-                        <a href="https://github.com/epodivilov" target="_blank">epodivilov</a>
-                    </li>
-                    <li class="item">
-                        <img src="../assets/twitter.svg" alt="twitter icon" width="16px" height="16px">
-                        <a href="https://twitter.com/senior_idealist" target="_blank">senior_idealist</a>
-                    </li>
-                    <li class="item">
-                        <img src="../assets/linkedin.svg" alt="linkedin icon" width="16px" height="16px">
-                        <a href="www.linkedin.com/in/evgeniy-podivilov" target="_blank">evgeniy-podivilov</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="about">
-                <h3>About</h3>
-                <p>Desenvolvedor frontend com mais de&nbsp;6&nbsp;anos de&nbsp;experi&ecirc;ncia. Trabalho
-                    principalmente com React stack. mas tamb&eacute;m estou interessado em&nbsp;outras &aacute;reas,
-                    em&nbsp;particular WebGL e&nbsp;PWA.</p>
-                <p>Tenho experi&ecirc;ncia no&nbsp;desenvolvimento de&nbsp;interfaces complexas com muitos
-                    gr&aacute;ficos. Al&eacute;m disso, tenho experi&ecirc;ncia com projectos legacy e&nbsp;com
-                    a&nbsp;sua adapta&ccedil;&atilde;o a&nbsp;um&nbsp;stack moderno.</p>
-                <p>Encanta-me trabalhar em&nbsp;tarefas complexas, experimentar novas tecnologias e&nbsp;abordagens,
-                    e&nbsp;otimizar o&nbsp;desempenho de&nbsp;aplicativos.</p>
-            </div>
-            <div class="about">
-                <h3>Skills</h3>
-                <p>HTML, CSS, JS, TS, React, Redux, NextJS, SVG, Canvas, Git</p>
-            </div>
-        </div>
-        <div class="div4">
-            <!--  -->
-            <div class="job">
-                <h4 class="job-position">Engenheiro programista sénior</h4>
-                <span class="job-period">Marco 2022 - atualidade</span>
-                <a class="job-title" href="https://www.reltio.com">Reltio</a>
-                <div class="job-description">
-                    <p>Participo no desenvolvimento de um coniunto de ferramentas de gestão de dados dos usuários em
-                        React. Desenvolvimento de uma biblioteca de componentes para exibir vários gráficos.
-                        Implementação das melhores práticas e ferramentas de análise da qualidade do código.
-                    </p>
-                </div>
-            </div>
-            <!--  -->
-            <div class="job">
-                <h4 class="job-position">Desenvolvedor sénior</h4>
-                <span class="job-period">Setembro 2020 - Março 2022</span>
-                <a class="job-title" href="https://www.tinkoff.ru/">Tinkoff</a>
-                <div class="job-description">
-                    <p>
-                        Eu era responsável pela manutencão e desenvolvimento da secção de <a
-                            href="https://www.tinkoff.ru/entertainment">"Diversões"</a> composta por várias aplicações
-                        SPA em React.
-                        Além disso, desenhei a arquitetura das aplicações, planeei tarefas de refactoring, e implementei
-                        ferramentas de melhoria da qualidade do código. Participei no desenvolvimento do quadro interno
-                        do framework SSR tramval
-                    </p>
-                    <p>Desempenhei um papel de liderança no projecto de mapeamento da sala de concertos. Desenvolvi um
-                        formato de dados unificado para Android. iOS e a Web. Criei uma ferramenta para transformar os
-                        diagramas SVG num novo formato de dados.</p>
-                    <p>Além das tarefas de trabalho, também participei no programa de formação de programadores web na
-                        Escola Tinkoffe participei no recrutamento e mentoria de colegas juniores.</p>
-                </div>
-            </div>
-
-            <!--  -->
-            <div class="job">
-                <h4 class="job-position">Engenheiro programista</h4>
-                <span class="job-period">Maio 2017 - Fevereiro 2020</span>
-                <a class="job-title" href="https://www.reltio.com">Reltio</a>
-                <div class="job-description">
-                    <p>Desenvolvi ferramentas de configuração e gestão de dados de usuários em React. Participei no
-                        desenvolvimento de uma biblioteca de componentes internos. Implementei ferramentas de melhoria
-                        da qualidade do código. Acelerei o processo de construção de aplicações. Optimizei os recursos e
-                        a ordem em que são carregados, melhorando os indicadores vitais da web.</p>
-                </div>
-            </div>
-
-            <!--  -->
-            <div class="job">
-                <h4 class="job-position">Desenvolvedor de jogos</h4>
-                <span class="job-period">Agosto 2016 - Marco 2017</span>
-                <a class="job-title" href="https://hgstudio.ru/">Happy Games Studio</a>
-                <div class="job-description">
-                    <p>
-                        Participei no desenvolvimento do jogo <a
-                            href="https://www.youtube.com/watch?v=ERv9ne35sNA">"Ranch Adventures"</a> em Pixius. Animei
-                        vários elementos da interface. Desenvolvi um sistema para trabalhar com ianelas modais no jogo.
-                        Concebi e desenvolvi um
-                        sistema para organizar o cenário na fazenda.</p>
-                    <p>Além do jogo, criei e desenvolvi uma ferramenta para exibir a análise do jogo, bem como
-                        administrar níveis de jogo, usuários e grupos.</p>
-                </div>
-            </div>
-        </div>
+  <aside>
+    <div>
+      <img class="avatar" alt="Evgeniy Podivilov" src="../assets/avatar.jpg" width="200px" height="200px" />
+      <h1>Evgenii Podivilov</h1>
+      <hr>
+      <h2>Frontend engineer</h2>
     </div>
+    <div>
+      <h3>Contactos</h3>
+      <ul>
+        <li>
+          <img src="../assets/phone.svg" alt="phone icon" width="16px" height="16px">
+          <a href="tel:+351915644367">+351 915 644 367</a>
+        </li>
+        <li>
+          <img src="../assets/mail.svg" alt="email icon" width="16px" height="16px">
+          <a href="mailto:evgeniy.podivilov@gmail.com">evgeniy.podivilov@gmail.com</a>
+        </li>
+        <li>
+          <img src="../assets/github.svg" alt="github icon" width="16px" height="16px">
+          <a href="https://github.com/epodivilov" target="_blank">epodivilov</a>
+        </li>
+        <li>
+          <img src="../assets/twitter.svg" alt="twitter icon" width="16px" height="16px">
+          <a href="https://twitter.com/senior_idealist" target="_blank">senior_idealist</a>
+        </li>
+        <li>
+          <img src="../assets/linkedin.svg" alt="linkedin icon" width="16px" height="16px">
+          <a href="www.linkedin.com/in/evgeniy-podivilov" target="_blank">evgeniy-podivilov</a>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <h3>Localização</h3>
+      <p>Lisboa, Portugal</p>
+    </div>
+    <div class="languages">
+      <h3>Tradução</h3>
+      <ul>
+        <li><a href="/ru">🇷🇺</a></li>
+        <li><a href="/en">🇬🇧</a></li>
+        <li><a href="/pt">🇵🇹</a></li>
+      </ul>
+    </div>
+  </aside>
+  <main>
+    <div class="summary">
+      <h3>Sobre mim</h3>
+      <p>Sou um desenvolvedor frontend com mais de 7 anos de experiência em diversos campos, desde a indústria de jogos
+        até o fintech. Sou apaixonado por enfrentar desafios complexos, criar interfaces interativas e desenvolver
+        ferramentas de alta qualidade. Estou pronto para compartilhar meu conhecimento e experiência para trabalhar com
+        uma equipe em tarefas desafiadoras, melhorar o produto e manter um alto nível de qualidade.</p>
+      <p>Tenho experiência na criação e manutenção de aplicativos complexos, otimização de processos e desenvolvimento
+        de ferramentas avançadas. Além disso, tenho experiência como mentor, ajudando colegas e estudantes a entender
+        novas tecnologias e aprimorar suas habilidades. Minha flexibilidade e desejo de crescer me permitem integrar
+        rapidamente a uma nova equipe e contribuir para o nosso sucesso coletivo.</p>
+    </div>
+    <div class="expereence">
+
+      <h3>Experiência</h3>
+      <ul class="work">
+        <li>
+          <time>2022</time>
+          <h4>Engenheiro de software de equipe na <a href="https://www.reltio.com">Reltio</a></h4>
+          <p>No meu atual emprego, estou ativamente envolvido na otimização e melhoria dos processos de desenvolvimento.
+            Atualizo a base de código das aplicações de acordo com os padrões modernos da empresa, migro-as para o
+            TypeScript e faço refatoração de aplicações antigas para melhorar o desempenho e a manutenibilidade. Faço a
+            transição das aplicações de serviços e bibliotecas desatualizados para os seus equivalentes atuais.</p>
+          <p>Promovo a decomposição de tarefas e o uso de pequenos pedidos de pull para melhorar o processo de revisão
+            de código. Participo na implementação do CI/CD, colaboro com as equipas para otimizar os testes e2e e os
+            pipelines para os acelerar e estabilizar. Desenvolvo o meu próprio meta-framework para testes de navegador
+            para acelerar o processo de escrita de testes para os programadores.</p>
+          <p>Estou a desenvolver várias ferramentas internas no Electron para simplificar o trabalho dos serviços de
+            apoio ao cliente.</p>
+        </li>
+        <li>
+          <time>2020</time>
+          <h4>Desenvolvedor Sênior na <a href="https://www.tinkoff.ru">Tinkoff</a></h4>
+          <p>Participei ativamente no desenvolvimento da secção <a
+              href="https://www.tinkoff.ru/entertainment">"Entretenimento"</a> no framework tramvai, trabalhando na
+            arquitetura da aplicação e na otimização de processos. Implementei práticas de especificação de
+            desenvolvimento e qualidade, tornando os sprints estáveis e reduzindo a ansiedade dos lançamentos. Melhorei
+            o CI/CD, reduzindo o tempo de compilação de 40 para 20 minutos.</p>
+          <p>Desempenhei um papel principal no projeto para criar uma ferramenta para exibir mapas de assentos de salas
+            de concerto nas plataformas Android, iOS e Web. Desenvolvi um formato unificado de dados e uma ferramenta
+            para transformar gráficos SVG no novo formato.</p>
+          <p>Colaborei com designers de UI/UX para trabalhar na consistência do design em todas as aplicações,
+            interagindo ativamente para melhorar a experiência do usuário.</p>
+          <p>Participei na formação de desenvolvedores web na Escola Tinkoff, participei na contratação de novos
+            funcionários e orientei colegas júniores, compartilhando conhecimentos e experiências adquiridas em projetos
+            anteriores.</p>
+        </li>
+        <li>
+          <time>2017</time>
+          <h4>Engenheiro de software na <a href="https://appliedtech.ru/">Applied Technologies</a></h4>
+          <p>Desenvolvi várias ferramentas usando a pilha React/Redux + Express para gerenciamento e análise de dados do
+            usuário, incluindo painéis, gráficos e tabelas. Criei três aplicações do zero, uma das quais projetei de
+            forma independente: desenvolvi um contrato de API e uma aplicação cliente em React. Além disso, colaborei
+            ativamente com designers de interface do usuário para melhorar a experiência do usuário da aplicação.</p>
+          <p>Participei no desenvolvimento de uma biblioteca interna de componentes e implementei ferramentas para
+            melhorar a qualidade do código. Melhorei o processo de construção da aplicação, otimizei recursos e a ordem
+            de carregamento, aumentando as pontuações do Web Vitals em 35%. Aumentei a cobertura de testes de 50% para
+            90% em todos os projetos, reduzindo o número de erros e acelerando o processo de desenvolvimento.</p>
+        </li>
+        <li>
+          <time>2016</time>
+          <h4>Desenvolvedor de Jogos na <a href="https://hgstudio.ru/">Happy Games Studio</a></h4>
+          <p>Trabalhei no desenvolvimento de jogo <a href="https://www.youtube.com/watch?v=ERv9ne35sNA">"Ranch
+              Adventures"</a> em PixiJS, combinando elementos de match-3 e fazenda. No projeto, fui responsável pelas
+            animações de destruição e aparição dos elementos do jogo. Também fiquei totalmente encarregado de
+            desenvolver a parte da fazenda do jogo: renderização da fazenda, criação de um sistema que permitia aos
+            jogadores gerir decorações da fazenda (adicionar, mover e remover elementos). Além disso, desenvolvi a
+            interface da fazenda, incluindo a exibição de vidas, moedas, níveis e outros elementos.</p>
+          <p>Desenvolvi um sistema para janelas modais, formulários de entrada e listas de amigos com rolagem. Além do
+            jogo, reescrevi completamente o sistema de administração de níveis existente, de um script JQuery de página
+            única para componentes modulares React. Expandi a funcionalidade do painel de administração, adicionando
+            gerenciamento de direitos de usuário, a capacidade de visualizar estatísticas sobre os níveis, controlar a
+            ordem dos níveis e outros recursos para o conforto do designer do jogo.</p>
+        </li>
+      </ul>
+    </div>
+  </main>
 </body>
 
 </html>
