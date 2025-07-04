@@ -1,0 +1,226 @@
+---
+import BaseLayout from "@layouts/base-layout.astro";
+import LanguageSwitcher from "@components/language-switcher.astro";
+import ResumeHeader from "@components/resume-header.astro";
+import ExperienceSection from "@components/experience-section.astro";
+import SkillsSection from "@components/skills-section.astro";
+
+import ContactSection from "@components/contact-section.astro";
+import type { Language } from "@locales/index";
+import { getTranslations } from "@locales/index";
+
+export interface Props {
+	lang: Language;
+	title?: string;
+	description?: string;
+}
+
+const {
+	lang,
+	title = "Curriculum Vitae",
+	description = "Professional resume and portfolio"
+} = Astro.props;
+
+const t = getTranslations(lang);
+---
+
+<BaseLayout title={title} description={description} lang={lang}>
+	<!-- Navigation Bar -->
+	<nav
+		class="sticky top-0 z-50 border-b border-gray-200 bg-white shadow-sm dark:border-slate-700 dark:bg-slate-900"
+	>
+		<div class="mx-auto max-w-4xl px-6 py-4">
+			<div class="flex items-center gap-4">
+				<div class="flex items-center space-x-6 mr-auto">
+					<h1 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+						{title}
+					</h1>
+
+					<!-- Navigation Links -->
+					<div class="hidden space-x-6 md:flex">
+						<a
+							href="#about"
+							class="text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+						>
+							{t.navigation.about}
+						</a>
+						<a
+							href="#experience"
+							class="text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+						>
+							{t.navigation.experience}
+						</a>
+						<a
+							href="#skills"
+							class="text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+						>
+							{t.navigation.skills}
+						</a>
+						<a
+							href="#contact"
+							class="text-gray-600 transition-colors hover:text-blue-600 dark:text-gray-400 dark:hover:text-blue-400"
+						>
+							{t.navigation.contact}
+						</a>
+					</div>
+				</div>
+
+				<!-- Language Switcher -->
+				<LanguageSwitcher currentLang={lang} />
+
+				<!-- Mobile Menu Button -->
+				<button
+					id="mobile-menu-button"
+					class="rounded-md p-2 text-gray-600 transition-colors hover:bg-gray-100 hover:text-blue-600 md:hidden dark:text-gray-400 dark:hover:bg-slate-800 dark:hover:text-blue-400"
+					aria-label="Toggle menu"
+				>
+					<svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M4 6h16M4 12h16M4 18h16"></path>
+					</svg>
+				</button>
+			</div>
+
+			<!-- Mobile Menu -->
+			<div
+				id="mobile-menu"
+				class="mt-4 hidden border-t border-gray-200 pt-4 pb-4 md:hidden dark:border-slate-700"
+			>
+				<div class="space-y-2">
+					<a
+						href="#about"
+						class="block rounded-md px-3 py-2 text-gray-600 transition-colors hover:bg-gray-50 hover:text-blue-600 dark:text-gray-400 dark:hover:bg-slate-800 dark:hover:text-blue-400"
+					>
+						{t.navigation.about}
+					</a>
+					<a
+						href="#experience"
+						class="block rounded-md px-3 py-2 text-gray-600 transition-colors hover:bg-gray-50 hover:text-blue-600 dark:text-gray-400 dark:hover:bg-slate-800 dark:hover:text-blue-400"
+					>
+						{t.navigation.experience}
+					</a>
+					<a
+						href="#skills"
+						class="block rounded-md px-3 py-2 text-gray-600 transition-colors hover:bg-gray-50 hover:text-blue-600 dark:text-gray-400 dark:hover:bg-slate-800 dark:hover:text-blue-400"
+					>
+						{t.navigation.skills}
+					</a>
+					<a
+						href="#contact"
+						class="block rounded-md px-3 py-2 text-gray-600 transition-colors hover:bg-gray-50 hover:text-blue-600 dark:text-gray-400 dark:hover:bg-slate-800 dark:hover:text-blue-400"
+					>
+						{t.navigation.contact}
+					</a>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Main Content -->
+	<main class="flex-1">
+		<!-- Header Section -->
+		<section id="about">
+			<ResumeHeader lang={lang} />
+		</section>
+
+		<!-- Experience Section -->
+		<section id="experience">
+			<ExperienceSection lang={lang} />
+		</section>
+
+		<!-- Skills Section -->
+		<section id="skills">
+			<SkillsSection lang={lang} />
+		</section>
+
+		<!-- Contact Section -->
+		<section id="contact">
+			<ContactSection lang={lang} />
+		</section>
+	</main>
+
+	<!-- Footer -->
+	<footer class="bg-gray-900 text-white dark:bg-slate-950">
+		<div class="mx-auto max-w-4xl px-6 py-8">
+			<div class="text-center">
+				<p class="text-gray-400 dark:text-gray-500">
+					© 2024 Evgenii Podivilov. All rights reserved.
+				</p>
+			</div>
+		</div>
+	</footer>
+</BaseLayout>
+
+<script>
+	// Mobile menu toggle
+	document.addEventListener("DOMContentLoaded", function () {
+		const mobileMenuButton = document.getElementById("mobile-menu-button");
+		const mobileMenu = document.getElementById("mobile-menu");
+
+		if (mobileMenuButton && mobileMenu) {
+			mobileMenuButton.addEventListener("click", function () {
+				mobileMenu.classList.toggle("hidden");
+			});
+		}
+
+		// Smooth scrolling for navigation links
+		document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+			anchor.addEventListener("click", function (e) {
+				e.preventDefault();
+				const href = (e.target as HTMLAnchorElement).getAttribute("href");
+				const target = href ? document.querySelector(href) : null;
+				if (target) {
+					target.scrollIntoView({
+						behavior: "smooth",
+						block: "start"
+					});
+
+					// Close mobile menu if open
+					if (mobileMenu && !mobileMenu.classList.contains("hidden")) {
+						mobileMenu.classList.add("hidden");
+					}
+				}
+			});
+		});
+
+		// Print functionality
+		document.querySelectorAll("button").forEach((button) => {
+			if (
+				button.textContent?.includes("Print") ||
+				button.textContent?.includes("Печать") ||
+				button.textContent?.includes("Imprimir")
+			) {
+				button.addEventListener("click", function () {
+					window.print();
+				});
+			}
+		});
+	});
+</script>
+
+<style>
+	/* Print styles */
+	@media print {
+		nav,
+		footer {
+			display: none !important;
+		}
+
+		.no-print {
+			display: none !important;
+		}
+
+		section {
+			page-break-inside: avoid;
+		}
+
+		.shadow-sm,
+		.shadow-md,
+		.shadow-lg {
+			box-shadow: none !important;
+		}
+	}
+</style>

@@ -1,0 +1,149 @@
+---
+import type { Language } from "@locales/index";
+import { getTranslations } from "@locales/index";
+import { getEntry } from "astro:content";
+import {
+  Mail,
+  Send,
+  MapPin,
+  Linkedin,
+  Github,
+  Twitter,
+} from "lucide-astro";
+
+export interface Props {
+  lang: Language;
+  class?: string;
+}
+
+const { lang, class: className = "" } = Astro.props;
+const t = getTranslations(lang);
+
+// Get contact info from collection
+const contactInfo = await getEntry("contacts", "main");
+
+if (!contactInfo?.data) {
+  throw new Error("Missing contact information");
+}
+---
+
+<section id="contact" class={`bg-white dark:bg-slate-900 ${className}`}>
+  <div class="max-w-4xl mx-auto px-6 py-12">
+    <h2 class="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-8 text-center">
+      {t.sections.contact}
+    </h2>
+
+    <div class="max-w-2xl mx-auto">
+      <!-- Contact Information -->
+      <div class="bg-gray-50 dark:bg-slate-800 rounded-xl p-8 mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="flex items-center space-x-4">
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center"
+            >
+              <Mail class="w-6 h-6 text-blue-600 dark:text-blue-400" />
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-600 dark:text-gray-400">{t.contact.email}</p>
+              <a
+                href={`mailto:${contactInfo.data.email}`}
+                class="text-lg font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                {contactInfo.data.email}
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center"
+            >
+              <Send class="w-6 h-6 text-blue-600 dark:text-blue-400" />
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-600 dark:text-gray-400">{t.contact.telegram}</p>
+              <a
+                href={`https://t.me/${contactInfo.data.telegram.replace('@', '')}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-lg font-semibold text-gray-900 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+              >
+                {contactInfo.data.telegram}
+              </a>
+            </div>
+          </div>
+
+          <div class="flex items-center space-x-4">
+            <div
+              class="flex-shrink-0 w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-lg flex items-center justify-center"
+            >
+              <MapPin class="w-6 h-6 text-blue-600 dark:text-blue-400" />
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-600 dark:text-gray-400">
+                {t.contact.location}
+              </p>
+              <p class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                {contactInfo.data.location[lang as keyof typeof contactInfo.data.location]}
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Social Media Links -->
+      <div class="text-center">
+        <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-6">
+          Connect with me
+        </h3>
+        <div class="flex justify-center space-x-6">
+          <a
+            href={contactInfo.data.social.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center justify-center w-12 h-12 bg-blue-600 hover:bg-blue-700 dark:bg-blue-500 dark:hover:bg-blue-600 rounded-lg transition-colors"
+            aria-label="LinkedIn"
+          >
+            <Linkedin class="w-6 h-6 text-white" />
+          </a>
+
+          <a
+            href={contactInfo.data.social.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center justify-center w-12 h-12 bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 rounded-lg transition-colors"
+            aria-label="GitHub"
+          >
+            <Github class="w-6 h-6 text-white" />
+          </a>
+
+          <a
+            href={contactInfo.data.social.twitter}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-center justify-center w-12 h-12 bg-sky-500 hover:bg-sky-600 dark:bg-sky-400 dark:hover:bg-sky-500 rounded-lg transition-colors"
+            aria-label="Twitter"
+          >
+            <Twitter class="w-6 h-6 text-white" />
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  @media print {
+    section {
+      background: white !important;
+      box-shadow: none !important;
+    }
+
+    .bg-gray-50 {
+      background: #f9fafb !important;
+      border: 1px solid #e5e7eb;
+    }
+  }
+</style>

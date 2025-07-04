@@ -1,0 +1,13 @@
+---
+import ResumeLayout from "@layouts/resume-layout.astro";
+import { getTranslations } from "@locales/index";
+
+const lang = "ru";
+const t = getTranslations(lang);
+
+const title = "Lorem Ipsum - Резюме";
+const description =
+  "Профессиональное резюме Lorem Ipsum - Старший разработчик программного обеспечения с экспертными знаниями современных веб-технологий и полнофункциональной разработки.";
+---
+
+<ResumeLayout lang={lang} title={title} description={description} />

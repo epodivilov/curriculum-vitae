@@ -1,0 +1,137 @@
+---
+import type { Language } from "@locales/index";
+import { getTranslations } from "@locales/index";
+import { getEntry } from "astro:content";
+import { Mail, Send, MapPin, Download, Printer } from "lucide-astro";
+
+export interface Props {
+	lang: Language;
+	class?: string;
+}
+
+const { lang, class: className = "" } = Astro.props;
+const t = getTranslations(lang);
+
+// Get data from collections
+const personalInfo = await getEntry("personal", "main");
+const contactInfo = await getEntry("contacts", "main");
+
+if (!personalInfo?.data || !contactInfo?.data) {
+	throw new Error("Missing personal or contact information");
+}
+---
+
+<section
+	class={`bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900 ${className}`}
+>
+	<div class="mx-auto max-w-4xl px-6 py-16">
+		<div class="grid grid-cols-1 items-start gap-12 lg:grid-cols-3 lg:gap-16">
+			<!-- Profile Photo -->
+			<div class="flex justify-center lg:col-span-1">
+				<div class="group relative">
+					<div
+						class="absolute -inset-1 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 opacity-25 blur transition duration-300 group-hover:opacity-40"
+					>
+					</div>
+					<div class="relative">
+						<img
+							src={personalInfo.data.avatar}
+							alt={personalInfo.data.name}
+							class="h-56 w-56 rounded-full border-4 border-white object-cover shadow-xl dark:border-slate-800"
+						/>
+					</div>
+				</div>
+			</div>
+
+			<!-- Personal Information -->
+			<div class="space-y-6 text-center lg:col-span-2 lg:text-left">
+				<div class="space-y-3">
+					<h1
+						class="text-4xl leading-tight font-bold text-slate-900 lg:text-5xl dark:text-slate-100"
+					>
+						{personalInfo.data.name}
+					</h1>
+					<h2 class="text-xl font-semibold text-blue-600 lg:text-2xl dark:text-blue-400">
+						{personalInfo.data.title[lang]}
+					</h2>
+				</div>
+
+				<p class="mx-auto max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300">
+					{personalInfo.data.summary[lang]}
+				</p>
+
+				<!-- Action Buttons -->
+				<div class="flex flex-col justify-center gap-4 pt-4 sm:flex-row lg:justify-start">
+					<button
+						class="inline-flex transform items-center justify-center rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white shadow-lg transition-all duration-200 hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-xl dark:bg-blue-500 dark:hover:bg-blue-600"
+					>
+						<Download class="mr-2 h-5 w-5" />
+						{t.common.downloadPdf}
+					</button>
+					<button
+						class="inline-flex items-center justify-center rounded-xl border-2 border-slate-300 bg-white px-8 py-4 font-semibold text-slate-700 transition-all duration-200 hover:border-slate-400 hover:bg-slate-50 hover:text-slate-900 dark:border-slate-600 dark:bg-slate-800 dark:text-slate-300 dark:hover:border-slate-500 dark:hover:bg-slate-700 dark:hover:text-slate-100"
+					>
+						<Printer class="mr-2 h-5 w-5" />
+						{t.common.printResume}
+					</button>
+				</div>
+
+				<!-- Quick Contact -->
+				<div
+					class="flex flex-wrap justify-center gap-6 border-t border-slate-200 pt-6 text-slate-600 lg:justify-start dark:border-slate-600 dark:text-slate-300"
+				>
+					<a
+						href={`mailto:${contactInfo.data.email}`}
+						class="group flex items-center transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+					>
+						<div
+							class="mr-3 rounded-lg bg-slate-100 p-2 transition-colors group-hover:bg-blue-100 dark:bg-slate-700 dark:group-hover:bg-blue-900"
+						>
+							<Mail class="h-4 w-4" />
+						</div>
+						<span class="font-medium">{contactInfo.data.email}</span>
+					</a>
+					<a
+						href={`https://t.me/${contactInfo.data.telegram.replace("@", "")}`}
+						target="_blank"
+						rel="noopener noreferrer"
+						class="group flex items-center transition-colors hover:text-blue-600 dark:hover:text-blue-400"
+					>
+						<div
+							class="mr-3 rounded-lg bg-slate-100 p-2 transition-colors group-hover:bg-blue-100 dark:bg-slate-700 dark:group-hover:bg-blue-900"
+						>
+							<Send class="h-4 w-4" />
+						</div>
+						<span class="font-medium">{contactInfo.data.telegram}</span>
+					</a>
+					<div class="flex items-center">
+						<div class="mr-3 rounded-lg bg-slate-100 p-2 dark:bg-slate-700">
+							<MapPin class="h-4 w-4" />
+						</div>
+						<span class="font-medium"
+							>{contactInfo.data.location[lang as keyof typeof contactInfo.data.location]}</span
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<style>
+	@media print {
+		section {
+			background: white !important;
+			box-shadow: none !important;
+		}
+
+		.no-print {
+			display: none !important;
+		}
+
+		.shadow-xl,
+		.shadow-lg {
+			box-shadow: none !important;
+		}
+	}
+</style>

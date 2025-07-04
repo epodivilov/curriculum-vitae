@@ -1,0 +1,82 @@
+---
+import type { Language } from "@locales/index";
+import { getTranslations } from "@locales/index";
+import { getEntry } from "astro:content";
+import { Lightbulb } from "lucide-astro";
+
+export interface Props {
+  lang: Language;
+  class?: string;
+}
+
+const { lang, class: className = "" } = Astro.props;
+const t = getTranslations(lang);
+
+// Get technologies from collection
+const technologiesData = await getEntry("technologies", "main");
+
+if (!technologiesData?.data) {
+  throw new Error("Missing technologies data");
+}
+
+const technologyCategories = technologiesData.data.categories;
+---
+
+<section class={`bg-gray-50 dark:bg-slate-800 ${className}`}>
+  <div class="max-w-4xl mx-auto px-6 py-8">
+    <h2 class="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-8 flex items-center">
+      <Lightbulb class="w-6 h-6 mr-3 text-blue-600 dark:text-blue-400" />
+      {t.sections.technologies}
+    </h2>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+      {
+        technologyCategories.map((category) => (
+          <div class="bg-white dark:bg-slate-900 rounded-lg shadow-sm hover:shadow-md dark:shadow-slate-900/30 p-6 transition-shadow">
+            <div class="flex items-center mb-4">
+              <div class="p-2 bg-blue-100 dark:bg-blue-900 rounded-lg mr-3">
+                <svg
+                  class="w-5 h-5 text-blue-600 dark:text-blue-400"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d={category.icon}
+                  />
+                </svg>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-900 dark:text-gray-100">
+                {category.title[lang]}
+              </h3>
+            </div>
+
+            <div class="flex flex-wrap gap-2">
+              {category.technologies.map((tech) => (
+                <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-blue-100 dark:hover:bg-blue-900 hover:text-blue-800 dark:hover:text-blue-200 transition-colors">
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  @media print {
+    section {
+      background: white !important;
+      box-shadow: none !important;
+    }
+
+    .bg-white {
+      border: 1px solid #e5e7eb;
+    }
+  }
+</style>
