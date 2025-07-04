@@ -1,9 +1,13 @@
 {
-  "name": "Evgenii Podivilov",
+  "name": {
+    "en": "Evgenii Podivilov",
+    "ru": "Евгений Подивилов",
+    "pt": "Evgenii Podivilov"
+  },
   "title": {
-    "en": "Frontend Engineer",
-    "ru": "Frontend Engineer",
-    "pt": "Frontend Engineer"
+    "en": "Frontend Developer",
+    "ru": "Frontend Developer",
+    "pt": "Frontend Developer"
   },
   "summary": {
     "en": "I am a frontend developer with over 7 years of experience in various fields, from the gaming industry to fintech. I am passionate about tackling complex challenges, creating interactive interfaces, and developing high-quality tools. I am ready to share my knowledge and experience to work with a team on challenging tasks, improve the product, and maintain a high level of quality. I have experience in creating and maintaining complex applications, optimizing processes, and developing advanced tools. In addition, I have mentoring experience, helping colleagues and students to understand new technologies and improve their skills. My flexibility and desire to grow allow me to quickly become a part of a new team and contribute to our collective success.",
@@ -13,8 +17,8 @@
   "avatar": "/assets/avatar.jpg",
   "yearsOfExperience": 7,
   "location": {
-    "en": "Lisbon, Portugal",
-    "ru": "Лиссабон, Португалия",
-    "pt": "Lisboa, Portugal"
+    "en": "Carcavelos, Portugal",
+    "ru": "Каркавелуш, Португалия",
+    "pt": "Carcavelos, Portugal"
   }
 }

@@ -1,10 +1,11 @@
 ---
 company: "Tinkoff"
 position:
-  en: "Senior Developer"
-  ru: "Старший разработчик"
-  pt: "Desenvolvedor Sênior"
-startDate: "2020-01"
+  en: "Senior frontend developer"
+  ru: "Старший frontend разработчик"
+  pt: "Desenvolvedor Frontend Sênior"
+startDate: "2020-09"
+endDate: "2022-02"
 technologies: ["Tramvai", "React", "JavaScript", "TypeScript", "CI/CD", "SVG", "Android", "iOS", "Web"]
 achievements:
   en:
@@ -37,7 +38,7 @@ achievements:
     - "Colaborou com designers de UI/UX para trabalhar na consistência do design em todas as aplicações"
     - "Participou na formação de desenvolvedores web na Escola Tinkoff"
     - "Participou na contratação de novos funcionários e orientou colegas júniores"
-order: 3
+order: 5
 ---
 
 ## Major Projects

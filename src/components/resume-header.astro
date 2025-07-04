@@ -37,7 +37,7 @@ if (!personalInfo?.data || !contactInfo?.data) {
 					<div class="relative">
 						<img
 							src={personalInfo.data.avatar}
-							alt={personalInfo.data.name}
+							alt={String(personalInfo.data.name[lang as keyof typeof personalInfo.data.name])}
 							class="h-56 w-56 rounded-full border-4 border-white object-cover shadow-xl dark:border-slate-800"
 						/>
 					</div>
@@ -86,7 +86,7 @@ if (!personalInfo?.data || !contactInfo?.data) {
 					<h1
 						class="text-4xl leading-tight font-bold text-slate-900 lg:text-5xl dark:text-slate-100"
 					>
-						{personalInfo.data.name}
+						{personalInfo.data.name[lang as keyof typeof personalInfo.data.name]}
 					</h1>
 					<h2 class="text-xl font-semibold text-blue-600 lg:text-2xl dark:text-blue-400">
 						{personalInfo.data.title[lang]}

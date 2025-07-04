@@ -1,10 +1,11 @@
 ---
 company: "Reltio"
 position:
-  en: "Staff software engineer"
-  ru: "Staff software engineer"
-  pt: "Engenheiro de software de equipe"
-startDate: "2022-01"
+  en: "Frontend developer"
+  ru: "Frontend developer"
+  pt: "Desenvolvedor Frontend"
+startDate: "2022-03"
+endDate: "2023-08"
 technologies: ["TypeScript", "React", "Electron", "CI/CD", "E2E Testing", "Browser Testing Framework"]
 achievements:
   en:
@@ -31,7 +32,7 @@ achievements:
     - "Participou na implementação de CI/CD e otimizou testes e2e e pipelines"
     - "Desenvolveu meta-framework proprietário para testes de navegador para acelerar escrita de testes"
     - "Criou várias ferramentas internas em Electron para serviço de suporte ao cliente"
-order: 2
+order: 4
 ---
 
 ## Key Contributions

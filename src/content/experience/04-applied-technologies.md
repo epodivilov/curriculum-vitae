@@ -1,10 +1,11 @@
 ---
 company: "Applied Technologies"
 position:
-  en: "Software engineer"
-  ru: "Инженер-программист"
-  pt: "Engenheiro de software"
-startDate: "2017-01"
+  en: "Frontend developer"
+  ru: "Frontend разработчик"
+  pt: "Desenvolvedor Frontend"
+startDate: "2017-05"
+endDate: "2020-02"
 technologies: ["React", "Redux", "Express", "JavaScript", "Node.js", "Testing", "Web Vitals", "Component Library"]
 achievements:
   en:
@@ -40,7 +41,7 @@ achievements:
     - "Melhorou processo de construção da aplicação e otimizou carregamento de recursos"
     - "Aumentou pontuações Web Vitals em 35% através de otimização de desempenho"
     - "Aumentou cobertura de testes de 50% para 90% em todos os projetos"
-order: 4
+order: 6
 ---
 
 ## Technical Achievements

@@ -58,7 +58,11 @@ const technologiesCollection = defineCollection({
 const personalCollection = defineCollection({
   type: 'data',
   schema: z.object({
-    name: z.string(),
+    name: z.object({
+      en: z.string(),
+      ru: z.string(),
+      pt: z.string(),
+    }),
     title: z.object({
       en: z.string(),
       ru: z.string(),

@@ -12,7 +12,7 @@ const { currentLang, class: className = "" } = Astro.props;
 const languages = [
   { code: "en" as Language, name: "English", flag: "🇺🇸", path: "/" },
   { code: "ru" as Language, name: "Русский", flag: "🇷🇺", path: "/ru/" },
-  { code: "pt" as Language, name: "Português", flag: "🇧🇷", path: "/pt/" },
+  { code: "pt" as Language, name: "Português", flag: "🇵🇹", path: "/pt/" },
 ];
 
 const currentLanguage = languages.find((lang) => lang.code === currentLang);
@@ -44,7 +44,7 @@ const basePath = Astro.url.pathname
       {
         languages.map((language) => (
           <a
-            href={`${basePath}/${language.code}`}
+            href={`${basePath}/${language.path}`}
             class={`flex items-center px-4 py-2 text-sm transition-colors ${
               language.code === currentLang
                 ? "bg-blue-50 dark:bg-blue-900 text-blue-700 dark:text-blue-200 font-medium"

@@ -4,7 +4,8 @@ position:
   en: "Game developer"
   ru: "Разработчик игр"
   pt: "Desenvolvedor de Jogos"
-startDate: "2016-01"
+startDate: "2016-08"
+endDate: "2017-03"
 technologies: ["PixiJS", "JavaScript", "jQuery", "React", "Game Development", "Animation", "UI/UX"]
 achievements:
   en:
@@ -34,7 +35,7 @@ achievements:
     - "Reescreveu completamente sistema de administração de níveis existente de script jQuery de página única para componentes modulares React"
     - "Expandiu funcionalidade do painel de administração com gerenciamento de direitos de usuário"
     - "Adicionou visualização de estatísticas sobre níveis, controle da ordem dos níveis e outros recursos para conveniência do designer do jogo"
-order: 5
+order: 7
 ---
 
 ## Game Development Projects
