@@ -1,62 +1,64 @@
 ---
 company: "Happy Games Studio"
 position:
-  en: "Game developer"
+  en: "Game Developer"
   ru: "Разработчик игр"
   pt: "Desenvolvedor de Jogos"
 startDate: "2016-08"
 endDate: "2017-03"
-technologies: ["PixiJS", "JavaScript", "jQuery", "React", "Game Development", "Animation", "UI/UX"]
+technologies: ["PixiJS", "React", "jQuery", "JavaScript", "Game Development"]
 achievements:
   en:
-    - "Worked on Ranch Adventures game development based on PixiJS, combining match-3 and farm elements"
-    - "Responsible for animations of destruction and appearance of game elements"
-    - "Fully developed farming part of the game including farm rendering and decoration management system"
-    - "Created farm interface with lives, currency, level display and other game elements"
-    - "Developed system for modal windows, input forms, and friend lists with scrolling"
-    - "Completely rewrote existing level administration system from single-page jQuery script to modular React components"
-    - "Expanded admin panel functionality with user rights management"
-    - "Added level statistics viewing, level order control and other features for game designer convenience"
+    - "Participated in development of hybrid game Ranch Adventures (match-3 + farm) based on PixiJS"
+    - "Implemented animation system for destruction and appearance of elements in match-3 mechanics"
+    - "Developed fully functional farming part: farm rendering, decoration management system, game interface"
+    - "Created modular UI component system: modal windows, input forms, scrollable friend lists"
+    - "Completely rewrote level management admin panel from jQuery to modular React components"
+    - "Expanded admin system functionality: user rights management, level statistics, drag-and-drop sorting for game designers"
   ru:
-    - "Участвовал в разработке игры Ranch Adventures на базе PixiJS, сочетающей элементы match-3 и фермы"
-    - "Был ответственным за анимации разрушения и появления элементов в игре"
-    - "Полностью занимался разработкой фермерской части игры включая отрисовку фермы и систему управления декорациями"
-    - "Создал интерфейс фермы с отображением жизней, валюты, уровня и прочих игровых элементов"
-    - "Разработал систему модальных окон, форм ввода и списков друзей со скроллом"
-    - "Полностью переписал существующую систему администрирования уровней с одностраничного jQuery скрипта на модульные React компоненты"
-    - "Расширил функционал админ-панели с управлением правами пользователей"
-    - "Добавил просмотр статистики по уровням, управление порядком уровней и другие функции для удобства геймдизайнера"
+    - "Участвовал в разработке гибридной игры Ranch Adventures (match-3 + ферма) на базе PixiJS"
+    - "Реализовал систему анимаций разрушения и появления элементов в match-3 механике"
+    - "Разработал полнофункциональную фермерскую часть: рендеринг фермы, система управления декорациями, игровой интерфейс"
+    - "Создал модульную систему UI компонентов: модальные окна, формы ввода, скроллируемые списки друзей"
+    - "Полностью переписал админ-панель управления уровнями с jQuery на модульные React компоненты"
+    - "Расширил функционал админ-системы: управление правами пользователей, статистика уровней, drag-and-drop сортировка для геймдизайнеров"
   pt:
-    - "Trabalhou no desenvolvimento do jogo Ranch Adventures baseado em PixiJS, combinando elementos de match-3 e fazenda"
-    - "Responsável pelas animações de destruição e aparição dos elementos do jogo"
-    - "Desenvolveu completamente a parte da fazenda do jogo incluindo renderização da fazenda e sistema de gerenciamento de decorações"
-    - "Criou interface da fazenda com exibição de vidas, moedas, níveis e outros elementos do jogo"
-    - "Desenvolveu sistema para janelas modais, formulários de entrada e listas de amigos com rolagem"
-    - "Reescreveu completamente sistema de administração de níveis existente de script jQuery de página única para componentes modulares React"
-    - "Expandiu funcionalidade do painel de administração com gerenciamento de direitos de usuário"
-    - "Adicionou visualização de estatísticas sobre níveis, controle da ordem dos níveis e outros recursos para conveniência do designer do jogo"
+    - "Participei no desenvolvimento de jogo híbrido Ranch Adventures (match-3 + fazenda) baseado em PixiJS"
+    - "Implementei sistema de animações de destruição e aparição de elementos na mecânica match-3"
+    - "Desenvolvi parte funcional completa da fazenda: renderização da fazenda, sistema de gestão de decorações, interface de jogo"
+    - "Criei sistema modular de componentes UI: janelas modais, formulários de entrada, listas roláveis de amigos"
+    - "Reescrevi completamente painel administrativo de gestão de níveis de jQuery para componentes modulares React"
+    - "Expandi funcionalidade do sistema administrativo: gestão de direitos de utilizadores, estatísticas de níveis, ordenação drag-and-drop para designers de jogos"
 order: 7
 ---
 
-## Game Development Projects
+## Hybrid Game Development
 
-### Ranch Adventures
-**Match-3 farm simulation game** built with PixiJS:
-- Hybrid gameplay combining puzzle and simulation elements
-- Complex animation systems for game element interactions
-- Farm rendering engine with decoration management
-- Interactive UI for game progression and resource management
+### Game Developer
+Contributed to **Ranch Adventures hybrid game** combining match-3 and farming mechanics:
 
-### Farm System Development
-**Complete farming simulation module**:
-- Visual farm editor with drag-and-drop decorations
-- Resource management and progression systems
-- Real-time farm state synchronization
-- Responsive farm interface for different screen sizes
+**Core Game Development:**
+- Hybrid gameplay mechanics: match-3 puzzle + farm simulation
+- PixiJS-based game engine implementation and optimization
+- Complex game state management for dual gameplay systems
+- Cross-system integration between puzzle and simulation mechanics
 
-### Admin Tools Modernization
-**Complete rewrite of game administration system**:
-- Migrated from jQuery to modular React architecture
-- User rights and permissions management
-- Level statistics and analytics dashboard
-- Game designer workflow optimization tools
+**Animation & Visual Systems:**
+- Advanced animation system for match-3 element destruction and creation
+- Smooth transition effects and particle systems
+- Visual feedback systems for player actions and achievements
+- Performance-optimized rendering for complex game scenes
+
+**Farm Simulation Module:**
+- Complete farm rendering engine with real-time updates
+- Decoration management system with drag-and-drop functionality
+- Game interface design: lives, currency, level progression display
+- Interactive farm building and customization features
+
+**UI Framework & Admin Tools:**
+- Modular UI component system: modal windows, forms, scrollable lists
+- Modern React-based admin panel (migrated from legacy jQuery)
+- User rights management and permissions system
+- Level statistics dashboard and analytics tools
+- Drag-and-drop level editor for game designers
+- Workflow optimization tools for content creation team

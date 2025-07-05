@@ -1,59 +1,65 @@
 ---
 company: "Reltio"
 position:
-  en: "Frontend developer"
-  ru: "Frontend developer"
-  pt: "Desenvolvedor Frontend"
+  en: "Staff Software Engineer"
+  ru: "Staff Software Engineer"
+  pt: "Engenheiro de Software Staff"
 startDate: "2022-03"
 endDate: "2023-08"
-technologies: ["TypeScript", "React", "Electron", "CI/CD", "E2E Testing", "Browser Testing Framework"]
+technologies: ["React", "TypeScript", "Angular", "Electron", "Jasmine", "Karma", "CI/CD", "Graph Database"]
 achievements:
   en:
-    - "Optimized and improved development processes across multiple teams"
-    - "Updated application codebases to align with modern company standards and migrated to TypeScript"
-    - "Refactored legacy applications to enhance performance and maintainability"
-    - "Promoted task decomposition and small pull requests to improve code review process"
-    - "Participated in CI/CD implementation and optimized e2e tests and pipelines"
-    - "Developed proprietary meta-framework for browser tests to accelerate test writing"
-    - "Created several internal Electron tools for customer support service"
+    - "Led technical modernization of enterprise MDM platform for large corporations' master data management"
+    - "Conducted large-scale migration of legacy applications to TypeScript and modern development standards, improving code performance and maintainability"
+    - "Designed and implemented meta-framework for browser testing, accelerating test writing process for developers"
+    - "Optimized CI/CD pipelines and e2e tests, ensuring stability and delivery speed in enterprise environment"
+    - "Promoted best practices: task decomposition, small pull requests, improved code review processes"
+    - "Developed internal Electron tools for customer support service, automating routine operations"
+    - "Coordinated work with teams on implementing modern development approaches in large tech organization"
   ru:
-    - "Оптимизировал и совершенствовал процессы разработки в нескольких командах"
-    - "Обновил кодовые базы приложений в соответствии с современными стандартами компании и перевёл на TypeScript"
-    - "Провёл рефакторинг старых приложений для повышения производительности и удобства поддержки"
-    - "Продвигал декомпозицию задач и использование маленьких pull-request'ов для улучшения процесса код-ревью"
-    - "Участвовал во внедрении CI/CD и оптимизировал e2e тесты и пайплайны"
-    - "Разработал собственный мета-фреймворк для браузерных тестов, чтобы ускорить процесс написания тестов"
-    - "Создал несколько внутренних инструментов на Electron для службы поддержки клиентов"
+    - "Возглавлял техническую модернизацию enterprise MDM платформы для управления мастер-данными крупных корпораций"
+    - "Провел масштабную миграцию legacy-приложений на TypeScript и современные стандарты разработки, повысив производительность и поддерживаемость кода"
+    - "Спроектировал и внедрил мета-фреймворк для браузерного тестирования, ускорив процесс написания тестов разработчиками"
+    - "Оптимизировал CI/CD пайплайны и e2e тесты, обеспечив стабильность и скорость доставки в enterprise-среде"
+    - "Продвигал best practices: декомпозицию задач, small pull requests, улучшение процессов код-ревью"
+    - "Разработал внутренние Electron-инструменты для службы поддержки клиентов, автоматизировав рутинные операции"
+    - "Координировал работу с командами по внедрению современных подходов к разработке в крупной технологической организации"
   pt:
-    - "Otimizou e melhorou processos de desenvolvimento em várias equipes"
-    - "Atualizou bases de código de aplicações para alinhá-las com padrões modernos da empresa e migrou para TypeScript"
-    - "Refatorou aplicações legadas para melhorar desempenho e manutenibilidade"
-    - "Promoveu decomposição de tarefas e pequenos pull requests para melhorar processo de revisão de código"
-    - "Participou na implementação de CI/CD e otimizou testes e2e e pipelines"
-    - "Desenvolveu meta-framework proprietário para testes de navegador para acelerar escrita de testes"
-    - "Criou várias ferramentas internas em Electron para serviço de suporte ao cliente"
+    - "Liderei modernização técnica da plataforma MDM enterprise para gestão de dados mestres de grandes corporações"
+    - "Conduzi migração em larga escala de aplicações legacy para TypeScript e padrões modernos de desenvolvimento, melhorando performance e manutenibilidade do código"
+    - "Projetei e implementei meta-framework para testes de navegador, acelerando processo de escrita de testes para desenvolvedores"
+    - "Otimizei pipelines CI/CD e testes e2e, garantindo estabilidade e velocidade de entrega em ambiente enterprise"
+    - "Promovi melhores práticas: decomposição de tarefas, pequenos pull requests, melhoria de processos de revisão de código"
+    - "Desenvolvi ferramentas internas em Electron para serviço de suporte ao cliente, automatizando operações rotineiras"
+    - "Coordenei trabalho com equipas na implementação de abordagens modernas de desenvolvimento em grande organização tecnológica"
 order: 4
 ---
 
-## Key Contributions
+## Enterprise Platform Modernization
 
-### Process Optimization
-**Modernized development workflows** across engineering teams:
-- Migrated legacy codebases to TypeScript
-- Established small PR and task decomposition practices
-- Improved code review processes and standards
-- Reduced technical debt through systematic refactoring
+### Staff Software Engineer
+Led **technical modernization of enterprise MDM platform** for large-scale data management:
 
-### CI/CD & Testing Infrastructure
-Developed **comprehensive testing and deployment solutions**:
-- Optimized e2e test suites for speed and stability
-- Created meta-framework for browser testing
-- Streamlined CI/CD pipelines for faster releases
-- Improved developer productivity through better tooling
+**Platform Transformation:**
+- Enterprise MDM (Master Data Management) platform serving major corporations
+- Large-scale legacy application migration to TypeScript and modern standards
+- Improved code performance, maintainability, and development velocity
+- Graph Database integration for complex data relationship management
 
-### Internal Tools Development
-Built **Electron-based applications** for customer support:
-- Simplified complex workflows for support teams
-- Automated repetitive tasks and data processing
-- Enhanced customer service capabilities
-- Reduced response times and improved accuracy
+**Testing Infrastructure Innovation:**
+- Designed and implemented meta-framework for browser testing automation
+- Accelerated developer test writing process through standardized tooling
+- Optimized CI/CD pipelines for enterprise-grade stability and speed
+- Enhanced e2e testing reliability in complex enterprise environments
+
+**Development Process Leadership:**
+- Promoted modern best practices: task decomposition and small pull requests
+- Improved code review processes across multiple development teams
+- Coordinated adoption of modern development approaches organization-wide
+- Mentored teams on transitioning from legacy to contemporary methodologies
+
+**Internal Tool Development:**
+- Created Electron-based applications for customer support automation
+- Automated routine operations to reduce manual workload and errors
+- Enhanced customer service capabilities through specialized tooling
+- Improved support team efficiency and response quality
