@@ -14,7 +14,6 @@
     "ru": "Senior Frontend Developer с 8+ годами опыта создания высоконагруженных приложений от AI-мессенджеров до финтех-платформ. Специализируюсь на полном цикле frontend-разработки: от архитектуры и технического лидерства до оптимизации производительности. Опыт работы с современным стеком (React, TypeScript, Next.js, Electron) и менторства команд в enterprise-среде.",
     "pt": "Senior Frontend Developer com mais de 8 anos de experiência na criação de aplicações de alta carga, desde mensageiros de IA até plataformas fintech. Especializo-me no ciclo completo de desenvolvimento frontend: desde arquitetura e liderança técnica até otimização de performance. Experiência com stack moderno (React, TypeScript, Next.js, Electron) e mentoria de equipes em ambientes enterprise."
   },
-  "avatar": "/assets/avatar.jpg",
   "yearsOfExperience": 8,
   "location": {
     "en": "Carcavelos, Portugal",

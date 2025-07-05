@@ -73,7 +73,6 @@ const personalCollection = defineCollection({
       ru: z.string(),
       pt: z.string(),
     }),
-    avatar: z.string(),
     yearsOfExperience: z.number(),
     location: z.object({
       en: z.string(),
