@@ -6,7 +6,7 @@ position:
   pt: "Engenheiro de Software Staff"
 startDate: "2022-03"
 endDate: "2023-08"
-technologies: ["React", "TypeScript", "Angular", "Electron", "Jasmine", "Karma", "CI/CD", "Graph Database"]
+technologies: ["React", "TypeScript", "Angular", "Electron", "Jasmine", "Karma", "CI/CD"]
 achievements:
   en:
     - "Led technical modernization of enterprise MDM platform for large corporations' master data management"

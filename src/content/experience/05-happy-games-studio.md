@@ -6,7 +6,7 @@ position:
   pt: "Desenvolvedor de Jogos"
 startDate: "2016-08"
 endDate: "2017-03"
-technologies: ["PixiJS", "React", "jQuery", "JavaScript", "Game Development"]
+technologies: ["PixiJS", "React", "jQuery", "JavaScript"]
 achievements:
   en:
     - "Participated in development of hybrid game Ranch Adventures (match-3 + farm) based on PixiJS"
@@ -35,27 +35,32 @@ order: 7
 ## Hybrid Game Development
 
 ### Game Developer
+
 Contributed to **Ranch Adventures hybrid game** combining match-3 and farming mechanics:
 
 **Core Game Development:**
+
 - Hybrid gameplay mechanics: match-3 puzzle + farm simulation
 - PixiJS-based game engine implementation and optimization
 - Complex game state management for dual gameplay systems
 - Cross-system integration between puzzle and simulation mechanics
 
 **Animation & Visual Systems:**
+
 - Advanced animation system for match-3 element destruction and creation
 - Smooth transition effects and particle systems
 - Visual feedback systems for player actions and achievements
 - Performance-optimized rendering for complex game scenes
 
 **Farm Simulation Module:**
+
 - Complete farm rendering engine with real-time updates
 - Decoration management system with drag-and-drop functionality
 - Game interface design: lives, currency, level progression display
 - Interactive farm building and customization features
 
 **UI Framework & Admin Tools:**
+
 - Modular UI component system: modal windows, forms, scrollable lists
 - Modern React-based admin panel (migrated from legacy jQuery)
 - User rights management and permissions system

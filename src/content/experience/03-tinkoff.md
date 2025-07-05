@@ -6,7 +6,7 @@ position:
   pt: "Desenvolvedor Sênior"
 startDate: "2020-09"
 endDate: "2022-02"
-technologies: ["Tramvai (React SSR)", "TypeScript", "SVG", "Android/iOS/Web", "CI/CD"]
+technologies: ["Tramvai (React SSR)", "TypeScript", "Android/iOS/Web", "CI/CD"]
 achievements:
   en:
     - "Developed Tinkoff Entertainment section on proprietary Tramvai framework (React SSR), worked on high-load applications architecture"
@@ -38,27 +38,32 @@ order: 5
 ## High-Load Entertainment Platform
 
 ### Senior Developer
+
 Developed **Tinkoff Entertainment section** using proprietary technology stack:
 
 **Platform Architecture:**
+
 - High-load applications built on Tramvai framework (React SSR)
 - Scalable architecture for entertainment booking and ticketing
 - Server-side rendering optimization for improved performance
 - Complex state management for real-time booking systems
 
 **Cross-Platform Concert Hall Project:**
+
 - Led development of unified seating chart visualization system
 - Cross-platform compatibility: Android, iOS, and Web applications
 - Designed standardized data format for venue layouts
 - SVG transformation pipeline for consistent rendering across platforms
 
 **Development Process Optimization:**
+
 - Implemented dev/QA specification practices for sprint stabilization
 - Reduced deployment anxiety through systematic quality assurance
 - CI/CD pipeline optimization: 50% reduction in build time (40→20 minutes)
 - Enhanced development velocity and release confidence
 
 **Team Leadership & Education:**
+
 - Teaching responsibilities at Tinkoff School for web developers
 - Technical mentoring for junior colleagues and career development
 - Active participation in developer hiring and interview processes
